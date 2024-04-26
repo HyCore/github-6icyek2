@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Paul Chauvat" description="About Paul Chauvat">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+<!--				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Paul Chauvat at work with a colleague"
+				/>
+-->
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						As a 23-year-old student and entrepreneur, I've always been driven by the ambition to spearhead innovative projects in cybersecurity. Throughout my journey, I've acquired a diverse skill set, evident in my portfolio of achievements and contributions on GitHub.
+					</p>
+					<p>
+						My interests and expertise span across various domains, from engaging in Capture The Flag (CTF) challenges like Cyber Humanum Est, to indulging in hobbies such as reading, editing, creating comics, and staying active through cycling, skiing, swimming, and even participating in marathons.
+					</p>
+					<p>
+						Proficient in a range of development tools such as JetBrains PHPSTORM, WebStorm, DataGrip, Clion, IntelliJ, and Microsoft Visual Studio, among others, I've also honed my skills in cybersecurity tools like MetaSploit, MassScan, NetSparker, BurpSuite, and more, ensuring a robust foundation for tackling complex security challenges.
+					</p>
+					<p>My professional experiences, including roles at Carrefour SOC, SOFTWARECLUB, and Viaccess Orca, have equipped me with hands-on experience in security operations, consultancy, cloud security, and project management. From countering critical threats like Log4Shell to deploying robust security solutions and implementing zero-trust architectures, I've consistently demonstrated my dedication and expertise in safeguarding digital assets.</p>
+					<p>Complementing my professional journey are my educational achievements, including a Bachelor's degree from IUT Cyber Nancy Brabois and a Master's degree from Orange Campus Cyber Paris, specializing in cybersecurity. Additionally, my background in Multimedia and Internet Studies from IUT MMI Aix Marseille, and a Baccalaureate in Humanities from Lycée Elie Faure Bordeaux, have provided me with a well-rounded perspective and a strong foundation in technology and communication.</p>
+<p>With a keen focus on continuous learning, problem-solving, and efficiency, I'm driven by a passion for innovation and a commitment to excellence in everything I do.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
